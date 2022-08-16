@@ -1,3 +1,4 @@
-<h2><%= Article.find(params[:id]).title %></h2>
-<p><%= Article.find(params[:id]).content %></p>
+<h2><%= @article.title %></h2>
+<h3><%= link_to 'Edit ✏️', edit_article_path(@article) %> / <%= link_to 'Delete 🗑️', article_path(@article), data: {turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete this article?' }  %></h3>
+<p><%= @article.content %></p>
 <p><%= link_to "<< back", articles_path %></p>
